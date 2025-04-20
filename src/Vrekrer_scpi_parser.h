@@ -5,7 +5,7 @@
 #include "Vrekrer_scpi_arrays.h"
 
 /// Library version
-#define VREKRER_SCPI_VERSION "v0.5.0"
+#define VREKRER_SCPI_VERSION "v0.6.0"
 
 /// Max number of valid tokens.
 #ifndef SCPI_MAX_TOKENS
