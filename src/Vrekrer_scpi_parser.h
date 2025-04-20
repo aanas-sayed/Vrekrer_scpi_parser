@@ -2,30 +2,8 @@
 #define VREKRER_SCPI_PARSER_H_
 
 #include <Arduino.h>
+#include "Vrekrer_defs.h"
 #include "Vrekrer_scpi_arrays.h"
-
-/// Library version
-#define VREKRER_SCPI_VERSION "v0.6.0"
-
-/// Max number of valid tokens.
-#ifndef SCPI_MAX_TOKENS
-#define SCPI_MAX_TOKENS 15
-#endif
-
-/// Max number of registered commands.
-#ifndef SCPI_MAX_COMMANDS
-#define SCPI_MAX_COMMANDS 20
-#endif
-
-/// Max number of registered special commands.
-#ifndef SCPI_MAX_SPECIAL_COMMANDS
-#define SCPI_MAX_SPECIAL_COMMANDS 0
-#endif
-
-/// Length of the message buffer.
-#ifndef SCPI_BUFFER_LENGTH
-#define SCPI_BUFFER_LENGTH 64
-#endif
 
 #ifndef SCPI_CUSTOM_ERROR_CODES
 /// SCPI Error codes.

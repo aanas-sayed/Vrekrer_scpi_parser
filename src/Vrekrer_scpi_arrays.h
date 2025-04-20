@@ -2,16 +2,7 @@
 #define VREKRER_SCPI_ARRAYS_CODE_H
 
 #include <Arduino.h>
-
-/// Max branch size of the command tree and max number of parameters.
-#ifndef SCPI_ARRAY_SYZE
-#define SCPI_ARRAY_SYZE 6
-#endif
-
-/// Integer size used for hashes.
-#ifndef SCPI_HASH_TYPE
-#define SCPI_HASH_TYPE uint8_t
-#endif
+#include "Vrekrer_defs.h"
 
 /*!
  Variable size string array class.
