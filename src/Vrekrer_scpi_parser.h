@@ -27,6 +27,21 @@
 #define SCPI_BUFFER_LENGTH 64
 #endif
 
+#ifndef SCPI_CUSTOM_ERROR_CODES
+/// SCPI Error codes.
+enum class ErrorCode
+{
+  /// No error
+  NoError = 0,
+  /// Unknown command received.
+  UnknownCommand,
+  /// Timeout before receiving the termination chars.
+  Timeout,
+  /// Message buffer overflow.
+  BufferOverflow,
+};
+#endif
+
 /// Void template used with SCPI_Parser::RegisterCommand.
 using SCPI_caller_t = void (*)(SCPI_Commands, SCPI_Parameters, Stream &);
 /// Void template used with SCPI_Parser::RegisterSpecialCommand.
@@ -55,18 +70,6 @@ public:
                        SCPI_caller_t caller);
   // Set the function to be used by the error handler.
   void SetErrorHandler(SCPI_caller_t caller);
-  /// SCPI Error codes.
-  enum class ErrorCode
-  {
-    /// No error
-    NoError,
-    /// Unknown command received.
-    UnknownCommand,
-    /// Timeout before receiving the termination chars.
-    Timeout,
-    /// Message buffer overflow.
-    BufferOverflow,
-  };
   /// Variable that holds the last error code.
   ErrorCode last_error = ErrorCode::NoError;
   // Process a message and execute it a valid command is found
